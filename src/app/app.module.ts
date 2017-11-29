@@ -3,23 +3,26 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import {MatPaginatorModule } from '@angular/material/paginator';
+import {MatButtonModule} from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { ButtonComponent } from './button/button.component';
+import { ButtonIntl } from './button/buttonIntl';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaginatorComponent,
-    // MatPaginatorIntl
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    // MatPaginatorIntl
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [ButtonIntl],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
