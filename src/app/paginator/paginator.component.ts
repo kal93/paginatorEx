@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-paginator',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _intl: MatPaginatorIntl) {
+    _intl.nextPageLabel = 'Sonraki Sayfa';
+    _intl.previousPageLabel = 'Önceki sayfa';
+  }
 
   ngOnInit() {
   }
