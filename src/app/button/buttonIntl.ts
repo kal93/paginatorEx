@@ -14,6 +14,18 @@ export class ButtonIntl {
      */
     changes: Subject<void> = new Subject<void>();
 
-    /** A label for the button name. */
     buttonLabel = 'Crisis on Infinite Earths';
+
+    // buttonLabel;
+    // constructor() {
+    // const locale = document['locale'] as string;
+    // console.log(locale);
+    // if ( locale === 'tr') {
+    //     this.buttonLabel = 'Sonsuz Dünyada Kriz';
+    // } else {
+
+    // /** A label for the button name. */
+    // this.buttonLabel = 'Crisis on Infinite Earths';
+    //      }
+    // }
 }
