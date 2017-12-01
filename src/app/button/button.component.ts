@@ -3,7 +3,6 @@ import { Component,
   Output,
   EventEmitter,
   OnDestroy ,
-  ViewEncapsulation,
   ChangeDetectionStrategy,
   ChangeDetectorRef } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';

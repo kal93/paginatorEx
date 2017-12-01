@@ -1,6 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { LocaleText } from './locale.tr';
 
 /**
  * To modify the labels and text displayed, create a new instance of buttonIntl and
@@ -14,8 +15,16 @@ export class ButtonIntl {
      */
     changes: Subject<void> = new Subject<void>();
 
-    buttonLabel = 'Crisis on Infinite Earths';
-
+    buttonLabel: string ;
+    constructor(_localeText: LocaleText ) {
+        const locale = document ['locale'] as string;
+    switch (locale) {
+        case 'tr': this.buttonLabel = _localeText.localeText.tr.buttonLabel;
+            break;
+        default: this.buttonLabel = _localeText.localeText.en.buttonLabel;
+            break;
+    }
+    }
     // buttonLabel;
     // constructor() {
     // const locale = document['locale'] as string;
