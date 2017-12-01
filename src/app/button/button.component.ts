@@ -1,13 +1,9 @@
 import { Component,
-  Input,
-  Output,
-  EventEmitter,
   OnDestroy ,
   ChangeDetectionStrategy,
   ChangeDetectorRef } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { ButtonIntl } from './buttonIntl';
-
 
 @Component({
   selector: 'app-button',
@@ -20,7 +16,7 @@ export class ButtonComponent implements OnDestroy {
 
   constructor(public _intl: ButtonIntl, private _changeDetectorRef: ChangeDetectorRef) {
           this._intlChanges = _intl.changes.subscribe(() => this._changeDetectorRef.markForCheck());
-           // _intl.buttonLabel = 'Button';
+            // _intl.buttonLabel = 'Button';
       }
 
       ngOnDestroy () {

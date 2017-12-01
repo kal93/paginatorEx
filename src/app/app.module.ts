@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { ButtonComponent } from './button/button.component';
 import { ButtonIntl } from './button/buttonIntl';
-import { LocaleText } from './button/locale.tr';
+import { LocaleText } from './button/labels.locale';
 
 @NgModule({
   declarations: [
