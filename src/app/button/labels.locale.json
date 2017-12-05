@@ -1,10 +1,7 @@
 
 
 {
-    "tr": {
-    "buttonLabel" : "Sonsuz Dünyada Kriz"
-    },
-
-    "en": { "buttonLabel" : "Crisis on Infinite Earths"
+    "buttonLabel" : "Crisis on Infinite Earths",
+    "firstLabel" :"firstLabel ",
+    "secondLabel":"secondLabel"
     }
-}

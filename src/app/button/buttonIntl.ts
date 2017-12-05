@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
-// this gets the label text from ts file
-import { LocaleText } from './labels.locale';
-// this gets the label text from json file
-import * as localeText from './labels.locale.json';
+import { ButtonLabelsModel } from './buttonLabels.model';
+
+import * as trLocaleText from './labels.tr.json';
+import * as enLocaleText from './labels.locale.json';
+
+
 /**
  * To modify the labels and text displayed, create a new instance of buttonIntl and
  * include it in a custom provider
@@ -17,39 +19,24 @@ export class ButtonIntl {
      */
     changes: Subject<void> = new Subject<void>();
 
-    buttonLabel: string ;
+    // buttonLabel: string ;
 
-    constructor( _localeText: LocaleText) {
-        // get text from json starts below
-        console.log ( typeof localeText + '\tlocaleText\t' + localeText);
-        const labels = JSON.stringify(localeText);
-        console.log(typeof labels + '\tlabels\t' + labels);
-        const temp = JSON.parse(labels);
-        console.log(typeof temp + '\ttemp\t' + temp);
-        console.log(temp.tr.buttonLabel);
-        // get text from json ends above
+    labelCollections: ButtonLabelsModel;
 
+    constructor( ) {
+
+        this.labelCollections = new ButtonLabelsModel();
 
         const locale = document ['locale'] as string;
     switch (locale) {
-        case 'tr':  // this.buttonLabel = _localeText.localeText.tr.buttonLabel;
-                    this.buttonLabel = temp.tr.buttonLabel;
+        case 'tr':
+                    this.labelCollections = JSON.parse(JSON.stringify(trLocaleText));
+                    console.log(this.labelCollections);
             break;
-        default: // this.buttonLabel = _localeText.localeText.en.buttonLabel;
-                 this.buttonLabel = temp.en.buttonLabel;
+        default:
+                 this.labelCollections = JSON.parse(JSON.stringify(enLocaleText));
+                 console.log(this.labelCollections);
             break;
     }
     }
-    // buttonLabel;
-    // constructor() {
-    // const locale = document['locale'] as string;
-    // console.log(locale);
-    // if ( locale === 'tr') {
-    //     this.buttonLabel = 'Sonsuz Dünyada Kriz';
-    // } else {
-
-    // /** A label for the button name. */
-    // this.buttonLabel = 'Crisis on Infinite Earths';
-    //      }
-    // }
 }
