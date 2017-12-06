@@ -1,0 +1,8 @@
+
+<button mat-button [matMenuTriggerFor]="menu">Filter</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>{{_intl.menuLabels.pinColumnText}}</button>
+  <button mat-menu-item>{{_intl.menuLabels.autoSizeColumnText}}</button>
+  <button mat-menu-item>{{_intl.menuLabels.resetColumnText}}</button>
+  <button mat-menu-item>{{_intl.menuLabels.toolPanelText}}</button>
+</mat-menu>

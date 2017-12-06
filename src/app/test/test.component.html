@@ -1,3 +1,5 @@
-<p>
-  test works!
-</p>
+<button type="{{sqType}}" [ngClass]="sqClass?sqClass:'sq-btn-primary'"
+value="{{sqValue}}" name="{{sqName}}" [disabled]="sqDisabled"
+(click)="clickEvent()" title="{{_intl.toolTipLabel.title}}">
+<ng-content></ng-content>
+</button>
